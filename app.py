@@ -15,7 +15,7 @@ from red_flags import detect_red_flags
 
 
 app = Flask(__name__)
-app.secret_key = "medikiosk_secret_key"
+app.secret_key = os.environ.get("SECRET_KEY")
 
 UPLOAD_FOLDER = os.path.join(app.root_path, "uploads")
 ALLOWED_EXTENSIONS = {"pdf", "jpg", "jpeg", "png"}
